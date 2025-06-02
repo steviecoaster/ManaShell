@@ -54,9 +54,6 @@ Searches for the card "Black Lotus" using an exact name match and renders the ca
 - This function uses the Scryfall API to fetch card data.
 - Ensure you have an active internet connection to use this function.
 - The `Invoke-RestMethod` cmdlet is used to send the API request.
-
-.LINK
-https://scryfall.com/docs/api
 #>
     [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Get-MtgCard/')]
     Param(

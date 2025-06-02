@@ -30,9 +30,6 @@ Searches for all blue cards with a mana value of 1.
 
 .NOTES
 - This function uses the Scryfall API to perform the search.
-
-.LINK
-https://scryfall.com/docs/api
 #>
     [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Search-Mtg/')]
     Param(

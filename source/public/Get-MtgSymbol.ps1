@@ -27,9 +27,6 @@ Retrieves data for the white mana symbol.
 - This function uses the Scryfall API to fetch symbol data.
 - Ensure you have an active internet connection to use this function.
 - The `Invoke-RestMethod` cmdlet is used to send the API request.
-
-.LINK
-https://scryfall.com/docs/api
 #>
     [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Get-MtgSymbol/')]
     Param(

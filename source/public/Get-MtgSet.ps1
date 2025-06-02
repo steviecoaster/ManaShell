@@ -36,8 +36,6 @@ Retrieves data for all Magic: The Gathering sets.
 - The `Invoke-RestMethod` cmdlet is used to send the API request.
 - Only one of the parameters `-Code` or `-Id` can be used at a time.
 
-.LINK
-https://scryfall.com/docs/api
 #>
     [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Get-MtgSet/')]
     Param(
