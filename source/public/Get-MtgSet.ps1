@@ -37,7 +37,7 @@ Retrieves data for all Magic: The Gathering sets.
 - Only one of the parameters `-Code` or `-Id` can be used at a time.
 
 #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Get-MtgSet/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/ManaShell/Commands/Get-MtgSet/')]
     Param(
         [Parameter()]
         [String]

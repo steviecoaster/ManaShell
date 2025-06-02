@@ -31,7 +31,7 @@ Searches for all blue cards with a mana value of 1.
 .NOTES
 - This function uses the Scryfall API to perform the search.
 #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Search-Mtg/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/ManaShell/Commands/Search-Mtg/')]
     Param(
         [Parameter()]
         [String]

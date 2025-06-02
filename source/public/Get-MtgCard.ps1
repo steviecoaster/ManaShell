@@ -55,7 +55,7 @@ Searches for the card "Black Lotus" using an exact name match and renders the ca
 - Ensure you have an active internet connection to use this function.
 - The `Invoke-RestMethod` cmdlet is used to send the API request.
 #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Get-MtgCard/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/ManaShell/Commands/Get-MtgCard/')]
     Param(
         [Parameter(Mandatory, ParameterSetName = 'search')]
         [String]

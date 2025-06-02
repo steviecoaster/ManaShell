@@ -28,7 +28,7 @@ Retrieves data for the white mana symbol.
 - Ensure you have an active internet connection to use this function.
 - The `Invoke-RestMethod` cmdlet is used to send the API request.
 #>
-    [CmdletBinding(HelpUri = 'https://steviecoaster.githubpages.io/ManaShell/Get-MtgSymbol/')]
+    [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/ManaShell/Commands/Get-MtgSymbol/')]
     Param(
         [Parameter()]
         [String]
