@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Get-MtgCard - ManaShell Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Get-MtgCard";
+        var mkdocs_page_input_path = "Commands\\Get-MtgCard.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> ManaShell Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../installation/">Installation</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Command Reference</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Get-MtgCard</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#synopsis">SYNOPSIS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#syntax">SYNTAX</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#search">search</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#random">random</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#description">DESCRIPTION</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#examples">EXAMPLES</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-1">EXAMPLE 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-2">EXAMPLE 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-3">EXAMPLE 3</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-4">EXAMPLE 4</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-5">EXAMPLE 5</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#parameters">PARAMETERS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#-name">-Name</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-exact">-Exact</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-fuzzy">-Fuzzy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-random">-Random</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-commander">-Commander</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-render">-Render</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#-progressaction">-ProgressAction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commonparameters">CommonParameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">INPUTS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">OUTPUTS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#returns-the-card-data-retrieved-from-the-scryfall-api-as-a-powershell-object">Returns the card data retrieved from the Scryfall API as a PowerShell object.</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#if-the-render-parameter-is-specified-the-card-data-is-displayed-visually-instead-of-being-returned">If the -Render parameter is specified, the card data is displayed visually instead of being returned.</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#notes">NOTES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#related-links">RELATED LINKS</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Get-MtgSet/">Get-MtgSet</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Get-MtgSymbol/">Get-MtgSymbol</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Search-Mtg/">Search-Mtg</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="https://github.com/steviecoaster/ManaShell">GitHub</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">ManaShell Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Command Reference</li>
+      <li class="breadcrumb-item active">Get-MtgCard</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="get-mtgcard">Get-MtgCard</h1>
+<h2 id="synopsis">SYNOPSIS</h2>
+<p>Retrieves Magic: The Gathering card data from the Scryfall API.</p>
+<h2 id="syntax">SYNTAX</h2>
+<h3 id="search">search</h3>
+<pre><code>Get-MtgCard -Name &lt;String&gt; [-Exact] [-Fuzzy] [-Render] [-ProgressAction &lt;ActionPreference&gt;]
+ [&lt;CommonParameters&gt;]
+</code></pre>
+<h3 id="random">random</h3>
+<pre><code>Get-MtgCard [-Random] [-Commander] [-Render] [-ProgressAction &lt;ActionPreference&gt;] [&lt;CommonParameters&gt;]
+</code></pre>
+<h2 id="description">DESCRIPTION</h2>
+<p>The `Get-MtgCard` function retrieves Magic: The Gathering card data using the Scryfall API. 
+It supports searching for cards by name (exact or fuzzy matching) or retrieving a random card. 
+The function can also filter for random cards that are legal as commanders.</p>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="example-1">EXAMPLE 1</h3>
+<pre><code>Get-MtgCard -Name &quot;Black Lotus&quot; -Exact
+Searches for the card &quot;Black Lotus&quot; using an exact name match.
+</code></pre>
+<h3 id="example-2">EXAMPLE 2</h3>
+<pre><code>Get-MtgCard -Name &quot;Lotus&quot; -Fuzzy
+Searches for a card with a name similar to &quot;Lotus&quot; using fuzzy matching.
+</code></pre>
+<h3 id="example-3">EXAMPLE 3</h3>
+<pre><code>Get-MtgCard -Random
+Retrieves a random Magic: The Gathering card.
+</code></pre>
+<h3 id="example-4">EXAMPLE 4</h3>
+<pre><code>Get-MtgCard -Random -Commander
+Retrieves a random Magic: The Gathering card that is legal as a commander.
+</code></pre>
+<h3 id="example-5">EXAMPLE 5</h3>
+<pre><code>Get-MtgCard -Name &quot;Black Lotus&quot; -Exact -Render
+Searches for the card &quot;Black Lotus&quot; using an exact name match and renders the card visually.
+</code></pre>
+<h2 id="parameters">PARAMETERS</h2>
+<h3 id="-name">-Name</h3>
+<p>Specifies the name of the card to search for.
+This parameter is mandatory when using the `search` parameter set.</p>
+<pre><code class="language-yaml">Type: String
+Parameter Sets: search
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-exact">-Exact</h3>
+<p>Performs an exact name search for the specified card.
+This parameter is part of the `search` parameter set.</p>
+<pre><code class="language-yaml">Type: SwitchParameter
+Parameter Sets: search
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-fuzzy">-Fuzzy</h3>
+<p>Performs a fuzzy name search for the specified card.
+This parameter is part of the `search` parameter set.</p>
+<pre><code class="language-yaml">Type: SwitchParameter
+Parameter Sets: search
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-random">-Random</h3>
+<p>Retrieves a random Magic: The Gathering card.
+This parameter is mandatory when using the `random` parameter set.</p>
+<pre><code class="language-yaml">Type: SwitchParameter
+Parameter Sets: random
+Aliases:
+
+Required: True
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-commander">-Commander</h3>
+<p>Filters random cards to only include those that are legal as commanders.
+This parameter is part of the `random` parameter set.</p>
+<pre><code class="language-yaml">Type: SwitchParameter
+Parameter Sets: random
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-render">-Render</h3>
+<p>If specified, renders the card data visually using the `Show-Card` function.</p>
+<pre><code class="language-yaml">Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="-progressaction">-ProgressAction</h3>
+<p>{{ Fill ProgressAction Description }}</p>
+<pre><code class="language-yaml">Type: ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+</code></pre>
+<h3 id="commonparameters">CommonParameters</h3>
+<p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
+<h2 id="inputs">INPUTS</h2>
+<h2 id="outputs">OUTPUTS</h2>
+<h3 id="returns-the-card-data-retrieved-from-the-scryfall-api-as-a-powershell-object">Returns the card data retrieved from the Scryfall API as a PowerShell object.</h3>
+<h3 id="if-the-render-parameter-is-specified-the-card-data-is-displayed-visually-instead-of-being-returned">If the <code>-Render</code> parameter is specified, the card data is displayed visually instead of being returned.</h3>
+<h2 id="notes">NOTES</h2>
+<ul>
+<li>This function uses the Scryfall API to fetch card data.</li>
+<li>Ensure you have an active internet connection to use this function.</li>
+<li>The `Invoke-RestMethod` cmdlet is used to send the API request.</li>
+</ul>
+<h2 id="related-links">RELATED LINKS</h2>
+<p><a href="https://scryfall.com/docs/api">https://scryfall.com/docs/api</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../installation/" class="btn btn-neutral float-left" title="Installation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Get-MtgSet/" class="btn btn-neutral float-right" title="Get-MtgSet">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../installation/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Get-MtgSet/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
