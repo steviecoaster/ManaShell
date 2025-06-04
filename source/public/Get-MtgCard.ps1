@@ -1,5 +1,5 @@
 Function Get-MtgCard {
-<#
+    <#
 .SYNOPSIS
 Retrieves Magic: The Gathering card data from the Scryfall API.
 
@@ -58,6 +58,19 @@ Searches for the card "Black Lotus" using an exact name match and renders the ca
     [CmdletBinding(HelpUri = 'https://steviecoaster.github.io/ManaShell/Commands/Get-MtgCard/')]
     Param(
         [Parameter(Mandatory, ParameterSetName = 'search')]
+        [ArgumentCompleter( {
+                param($Command, $Parameter, $WordToComplete, $CommandAst, $FakeBoundParams)
+
+                # Fetch card names from the catalog
+                $cardNames = Get-MtgCatalogItem -Item 'card-names'
+
+                # Filter card names based on the input and wrap the result in single quotes
+                $cardNames | Where-Object { $_ -like "$WordToComplete*" } | ForEach-Object {
+                    $quotedName = "'$_'" # Wrap the entire name in single quotes
+                    [System.Management.Automation.CompletionResult]::new($quotedName, $quotedName, 'ParameterValue', "Magic: The Gathering card name: $_")
+                }
+            }
+        )]
         [String]
         $Name,
 
